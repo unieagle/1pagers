@@ -36,6 +36,11 @@ array = [1,2,3,4]; array.push(5); array.pop() #=> 5; array[0] #=> 1
 hash = {a: 1, b: 2, c: 3}
 ```
 
+Convert from array of key/value pair array to hash:
+```ruby
+[['a',1],['b',2]].to_h #=> {'a' => 1, 'b' => 2}
+```
+
 ## Flow Control
 
 If statement
