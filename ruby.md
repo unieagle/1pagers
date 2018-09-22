@@ -28,6 +28,8 @@ str[0..3] #=> "a st"
 
 ```ruby
 array = [1,2,3,4]; array.push(5); array.pop() #=> 5; array[0] #=> 1
+array.shift #=> 1; array #=> [2,3,4]
+array.unshift(1) #=> [1,2,3,4]
 ```
 
 ### Map
