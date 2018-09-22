@@ -178,3 +178,60 @@ p b #=> 2
 ```
 
 ## Class / Module
+
+### Class
+
+```ruby
+class Foo
+  attr_accessor :instacne_variable
+  def initialize # constructor
+    @instacne_variable = 'some thing'
+  end
+  def foo
+    puts "this is instance method"
+  end
+  def self.bar
+    puts "this is class method"
+  end
+end
+
+f = Foo.new
+f.foo #=> "this is instance method"
+Foo.bar #=> "this is class method"
+```
+
+Subclass
+
+```ruby
+class Bar < Foo
+end
+
+Bar.new.foo #=> "this is instance method"
+```
+
+### Module
+
+Module is like namespace in Ruby, and also can be include or extend into a class.
+
+```ruby
+module Foo
+  NAME = "Module Foo"
+  def foo
+    puts "foo"
+  end
+end
+
+Foo::Name #=> "Module Foo"
+
+class A
+  include Foo
+end
+
+A.new.foo #=> "foo"
+
+class B
+  extend Foo
+end
+
+B.foo #=> "foo"
+```
