@@ -36,6 +36,12 @@ array.unshift(1) #=> [1,2,3,4]
 
 ```ruby
 hash = {a: 1, b: 2, c: 3}
+hash[:d] = 4
+hash[:c] = 30
+hash.delete(:d)
+hash.each{|k,v| do_something}
+hash.keys #=> [:a, :b, :c]
+hash.values #=> [1,2,30]
 ```
 
 Convert from array of key/value pair array to hash:
