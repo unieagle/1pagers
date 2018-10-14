@@ -143,66 +143,37 @@ for(int i = 10 ; i < 15; ++i) {
 
 ## Methods / Functions
 
-```ruby
-def foo
-  # do something
-end
+```java
+int foo() {
+    // do something
+}
 
-def bar(arg1, arg2='default value')
-end
+int bar(int arg1, String arg2) { // no default arg value support, primitive by val, objects by ref
+    // do something
+}
 ```
 
 Viable length of arguments list
 
-```ruby
-def foo(*remaining_args) # place in the end of argument list, collects all the remaining args
-  p remaining_args
-end
+```java
+void foo(Object... args) {
+    for (Object var : args) {
+        System.out.println(var);
+    }
+}
 
-foo #=> []
-foo 1,2,3 #=> [1,2,3]
-```
-
-Hash map arguments
-
-```ruby
-def foo(options={}) # place in the end of argument list, collects all the remaining hash k-v pairs
-  p options
-end
-
-foo #=> {}
-foo a: 1, b: 2, c: 3 #=> {:a=>1, :b=>2, :c=>3}
+foo(1,2,"a","b"); // print: 1,2,a,b
 ```
 
 With block
 
-```ruby
-def foo
-  yield 1 if block_given?
-end
-
-foo {|i| p i} #=> 1
-
-# passing block through methods
-def bar(&block)
-  foo(&block) if block_given?
-end
-
-bar {|i| p i} #=> 1
-```
-
-Ruby method returns the value of the last statement executed in the method if no `return` specified.
-
-Return multiple values:
-
-```ruby
-def foo
-  return [1,2]
-end
-
-a,b = foo
-p a #=> 1
-p b #=> 2
+```java
+// Consumer is for accespt a single arg and return void
+// and you can find a lot predefined Handlers in java.util.function
+void bar(java.util.function.Consumer l) {
+    l.accept(100);
+}
+bar((arg)->{System.out.println(arg);}); // print 100
 ```
 
 ## Lambda / Proc
