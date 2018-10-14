@@ -68,19 +68,25 @@ for (int var : arr) {
 
 ### Map
 
-```ruby
-hash = {a: 1, b: 2, c: 3}
-hash[:d] = 4
-hash[:c] = 30
-hash.delete(:d)
-hash.each{|k,v| do_something}
-hash.keys #=> [:a, :b, :c]
-hash.values #=> [1,2,30]
-```
-
-Convert from array of key/value pair array to hash:
-```ruby
-[['a',1],['b',2]].to_h #=> {'a' => 1, 'b' => 2}
+```java
+Map<Integer, String> map = new LinkedHashMap<>(); // Or HashMap (not reserving the inserting order)
+// add pair
+map.put(1, "a");
+map.put(2, "b");
+map.put(3, "c");
+// modify pair
+map.put(1, "aa");
+// access
+String v = map.get(1); // null if key does not exist
+System.out.println(v);
+// delete
+map.remove(3); // skip if key does not exist
+// check has key
+boolean hasKey = map.containsKey(4); // false
+// check each element
+for (Integer key : map.keySet()) {
+    System.out.println(String.format("%d : %s", key, map.get(key)));
+}
 ```
 
 ## Flow Control
