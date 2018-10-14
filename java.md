@@ -176,6 +176,21 @@ void bar(java.util.function.Consumer l) {
 bar((arg)->{System.out.println(arg);}); // print 100
 ```
 
+Overloading (重载)
+
+```java
+void foo(int arg) {
+    System.out.println("Int:" + arg);
+}
+
+void foo(String arg) {
+    System.out.println("String:" + arg);
+}
+
+foo(100); // Int: 100
+foo("abc"); // String: abc
+```
+
 ## Lambda / Proc
 
 ```java
