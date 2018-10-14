@@ -245,29 +245,27 @@ class TestClass extends Base {
 (new TestClass()).test(); // prints "Sub foo" and "Base bar"
 ```
 
-### Module
+### Package
 
-Module is like namespace in Ruby, and also can be include or extend into a class.
+Package is the namespace concept in Java, it needs proper directory structure to compile properly. e.g.
 
-```ruby
-module Foo
-  NAME = "Module Foo"
-  def foo
-    puts "foo"
-  end
-end
+```java
+// net/unieagle/MyClass.java
+package net.unieagle;
+public class MyClass {
+    public void test() {
+        System.out.println("MyClass test");
+    }
+}
+```
 
-Foo::Name #=> "Module Foo"
+Need has the following file system stucture:
 
-class A
-  include Foo
-end
-
-A.new.foo #=> "foo"
-
-class B
-  extend Foo
-end
-
-B.foo #=> "foo"
+```bash
+$tree .
+.
+├── main.java
+└── net
+    └── unieagle
+        └── MyClass.java
 ```
