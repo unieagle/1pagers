@@ -185,6 +185,47 @@ p a #=> 1
 p b #=> 2
 ```
 
+## Lambda / Proc
+
+```ruby
+l = lambda{ |arg| puts arg }
+l.call(1) #=> 1
+
+# Or
+l = ->(arg){ puts arg }
+l.call(1) #=> 1
+```
+
+```ruby
+# Proc is more like a code piece
+p = Proc.new{ |arg| puts arg }
+p.call(2) #=> 2
+```
+
+Main difference between them is `return` in Proc will return the calling function, will lambda just return the lambda itself:
+
+```ruby
+def foo
+  l = lambda{ puts "1"; return }
+  p = Proc.new{ puts "2"; return }
+  
+  puts "A"
+  l.call
+  puts "B"
+  p.call
+  puts "C"
+end
+
+foo
+# =>
+# A
+# 1
+# B
+# 2
+```
+
+`foo` returns by the Proc `return` statement
+
 ## Class / Module
 
 ### Class
