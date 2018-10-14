@@ -83,6 +83,7 @@ System.out.println(v);
 map.remove(3); // skip if key does not exist
 // check has key
 boolean hasKey = map.containsKey(4); // false
+boolean hasValue = map.containsValue("aa"); // true
 // check each element
 for (Integer key : map.keySet()) {
     System.out.println(String.format("%d : %s", key, map.get(key)));
