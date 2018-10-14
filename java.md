@@ -178,44 +178,10 @@ bar((arg)->{System.out.println(arg);}); // print 100
 
 ## Lambda / Proc
 
-```ruby
-l = lambda{ |arg| puts arg }
-l.call(1) #=> 1
-
-# Or
-l = ->(arg){ puts arg }
-l.call(1) #=> 1
+```java
+java.util.function.Consumer lambda = (arg)->{ System.out.println(arg); };
+lambda.accept(200);
 ```
-
-```ruby
-# Proc is more like a code piece
-p = Proc.new{ |arg| puts arg }
-p.call(2) #=> 2
-```
-
-Main difference between them is `return` in Proc will return the calling function, while lambda just returns the lambda itself:
-
-```ruby
-def foo
-  l = lambda{ puts "1"; return }
-  p = Proc.new{ puts "2"; return }
-  
-  puts "A"
-  l.call
-  puts "B"
-  p.call
-  puts "C"
-end
-
-foo
-# =>
-# A
-# 1
-# B
-# 2
-```
-
-`foo` returns by the Proc `return` statement
 
 ## Class / Module
 
