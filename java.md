@@ -28,10 +28,42 @@ str.substring(2, 4); // "st", [startIndex, endInded)
 
 ### Array
 
-```ruby
-array = [1,2,3,4]; array.push(5); array.pop() #=> 5; array[0] #=> 1
-array.shift #=> 1; array #=> [2,3,4]
-array.unshift(1) #=> [1,2,3,4]
+Basic array:
+
+```java
+int [] arr1 = new int[5];
+int arr2 [] = new int[5];
+int [] arr3 = {1,2,3,4,5};
+
+// modify
+arr3[4] = 6;
+
+// each element
+for (int var : arr3) {
+    System.out.println(var); // 1,2,3,4,5,6
+}
+```
+
+`ArrayList` as `List` from `util`:
+
+```java
+// ArrayList from util
+List<Integer> arr = new ArrayList<Integer>(); // or LinkedList<Integer>
+// add element
+arr.add(Integer.valueOf(1));
+arr.add(Integer.valueOf(50));
+arr.add(Integer.valueOf(200));
+// access element
+Integer i = arr.get(2);
+System.out.println(i);
+// modify element
+arr.set(1, Integer.valueOf(100));
+// delete element
+arr.remove(2);
+// loop through elements
+for (int var : arr) {
+    System.out.println(var);
+}
 ```
 
 ### Map
