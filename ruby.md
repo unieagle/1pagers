@@ -1,4 +1,4 @@
-# Template in Ruby
+# Ruby 1 Pager
 
 ## Basic Data
 
