@@ -202,7 +202,7 @@ p = Proc.new{ |arg| puts arg }
 p.call(2) #=> 2
 ```
 
-Main difference between them is `return` in Proc will return the calling function, will lambda just return the lambda itself:
+Main difference between them is `return` in Proc will return the calling function, while lambda just returns the lambda itself:
 
 ```ruby
 def foo
