@@ -202,32 +202,47 @@ lambda.accept(200);
 
 ### Class
 
-```ruby
-class Foo
-  attr_accessor :instacne_variable
-  def initialize # constructor
-    @instacne_variable = 'some thing'
-  end
-  def foo
-    puts "this is instance method"
-  end
-  def self.bar
-    puts "this is class method"
-  end
-end
+```java
+interface TestInterfaceFoo {
+    public void foo();
+}
 
-f = Foo.new
-f.foo #=> "this is instance method"
-Foo.bar #=> "this is class method"
-```
+interface TestInterfaceBar {
+    public void bar();
+}
 
-Subclass
+// Java class can impements multiple interfaces
+class Base implements TestInterfaceFoo, TestInterfaceBar {
+    int instance_field;
+    static int class_field;
 
-```ruby
-class Bar < Foo
-end
+    // Constructor
+    public Base() {
+        this.instance_field = 100;
+    }
 
-Bar.new.foo #=> "this is instance method"
+    public void foo() {
+        System.out.println("Base foo");
+    }
+
+    public void bar() {
+        System.out.println("Base bar");
+    }
+}
+
+// Java class can only extends from single super class
+class TestClass extends Base {
+    void test() {
+        foo();
+        bar();
+    }
+
+    public void foo() {
+        System.out.println("Sub foo");
+    }
+}
+
+(new TestClass()).test(); // prints "Sub foo" and "Base bar"
 ```
 
 ### Module
