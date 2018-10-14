@@ -94,72 +94,51 @@ for (Integer key : map.keySet()) {
 
 If statement
 
-```ruby
-If true
-	# do something
-elsif true
-	# in another condition
-else
-	# else
-end
+```java
+if(true) {
+    // do something
+} else if (true) {
+    // do something else
+} else {
+    // do something else
+}
 ```
 
 Switch statement
 
 ```ruby
-case condition
-when 1
-	# do something when 1 === condition
-when /abc/
-	# do something when condition matches reg exp /abc/
-when 1..100
-	# do something when condition in (1..100) range (1 <= condition <= 100), still calls (1..100).===(condition)
-when a_proc
-	# do something when a_proc.call(condition) returns true condition, because Proc#===(arg) implements as proc.call(arg)
-else
-	# do else if none of the above matches
-end
+int key = 100;
+switch (key) {
+    case 1:
+        // do something with key == 1
+        break;
+    case 100:
+        // do something with key == 100
+        break;
+    default:
+        break;
+}
 ```
 
 While / Until loop
 
-```ruby
-while true # `do` here is optional
-	# do something
-	# break / next / redo
-end
+```java
+int var = 1;
+while(var < 5){
+    System.out.println(var++);
+}
 
-begin
-	# do something
-end while true
-
-until false
-	# do something / is similar to while but with reversed condition check
-end
+do {
+    System.out.println(var--);
+} while (var > 0); // NOTICE this ;
 ```
 
 For loop
 
-```ruby
-for x in [1,2,3,4,5] do
-	# do something
-end
-```
-
-Other set iterations
-
-```ruby
-[1,2,3,4,5].each do |x|
-end
-
-{a: 1, b: 2, c: 3}.each do |key, value|
-end
-
-5.times{|i| puts i} #=> 0,1,2,3,4
-
-5.upto(10){|i| puts i} #=> 5,6,7,8,9,10
-
-(1..5).step(1){|i| puts i} #=> 1,2,3,4,5
+```java
+for(int i = 10 ; i < 15; ++i) {
+    System.out.println(i);
+}
 ```
 
 ## Methods / Functions
