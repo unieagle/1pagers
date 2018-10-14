@@ -3,25 +3,27 @@
 ## Basic Data
 
 ```java
-empty = nil
-x = 1 / 1.1 / 1_000_000
-sym = :this_is_a_symbol
-range = 1..100 #[1,100] / 1...100 #[1, 100)
-reg = /abc/
+Object empty = null;
+int i = 100;
+float f = 50.0f;
+double d = 100.00;
+char c = 'A';
+String str = "abcdefg";
 ```
 
 ### String
 
-```ruby
-str = 'a string' # can not interpolate
-str = "a string"
-str = "a string of #{x}"
+```java
+String str = "a string";
+String str = String.format("a string interpolating example: %s", "some other string");
 
-str.each_char{|c| puts c}
+// each char:
+for (int i = 0; i < str.length(); i++) {
+    System.out.print(str.charAt(i));
+}
 
-str.each_char.with_index{|c, i| puts "#{i}: #{c}"}
-
-str[0..3] #=> "a st"
+// substring:
+str.substring(2, 4); // "st", [startIndex, endInded)
 ```
 
 ### Array
