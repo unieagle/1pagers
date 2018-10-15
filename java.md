@@ -269,3 +269,21 @@ $tree .
     └── unieagle
         └── MyClass.java
 ```
+
+## Stream / Parallel Stream
+
+Stream in Java is a collection of elements, on the steam, defined a lot useful operations like `map`, `filter`, `reduce`, `matchAll`, `matchAny`, `collect`, etc.
+
+Can do those operations to a collection of elements with single thread `stream` or paralleled with `parallelStream`, very convenient.
+
+```java
+int [] arr = {1,2,3,4,5,6,7,8,9,10};
+List<Integer> arr2 = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+arr2.forEach(arg -> System.out.println(arg));
+arr2.stream().filter(arg -> arg % 2 == 0).forEach(arg -> System.out.println(arg));
+arr2.parallelStream()
+    .filter(arg -> arg % 2 == 0)
+    .map(arg -> arg * 10)
+    .forEachOrdered(arg -> System.out.println(arg));
+```
